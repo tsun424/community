@@ -1,0 +1,33 @@
+th{
+	background-color:#006699;
+	color:#fff;
+}
+
+body { padding-top: 70px; }
+
+#logo {
+	float:left;
+	margin:0;
+	padding:0;
+}
+.wrapper{
+	width:80%;
+	margin:auto;
+}
+
+.pages{
+	vertical-align:sub;
+	margin-left:10px;
+}
+.post-button{
+	margin:20px 0;
+}
+.required{
+	color:#ff0000;
+	vertical-align:center;
+	margin-left:0.5em;
+}
+.wrapper-sm{
+	width:60%;
+	margin:auto;
+}
