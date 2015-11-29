@@ -1,6 +1,15 @@
 <?php
+/**
+ *	LoginController
+ ************************************************************************
+ *	@Author Xiaoming Yang
+ *	@Date	2015-10-28 22:55
+ ************************************************************************
+ *	update time			editor				updated information
+ *  28-11-2015          Xiaoming Yang       update the login method, redirect request to TopicController
+ */
 
-	class LoginController extends Controller{
+class LoginController extends Controller{
 
         private $loginModel;
 
@@ -9,14 +18,11 @@
         }
 
 		function login(){
-            $topicModel = ModelFactory::build('topic'); ;
             $userName = $_REQUEST['username'];
             $userPwd = $_REQUEST['userpwd'];
             $result = $this->loginModel->login($userName,$userPwd);
             if($result == 'success'){
-                $topicAttr = $topicModel->listTopics();
-                $_REQUEST['topicAttr'] = $topicAttr;
-                $this->view = View::build('topic/topicView');
+                parent::redirect("topic/listTopics");
             }else{
                 $this->view = View::build('failure');
             }

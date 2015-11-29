@@ -64,19 +64,12 @@
         <div class="tab-pane active" id="tab1">
             <div class="constainer">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-lg-10 col-md-10 col-sm-10">
                         <ul class="pagination">
-                            <li><a href="#">Prev</a></li>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">Next</a></li>
-                            <span class="pages">Total:105,5 pages</span>
+                            <?php echo $_REQUEST['pagination']->outputPage();?>
                         </ul>
                     </div>
-                    <div class="col-md-4 text-right post-button">
+                    <div class="col-md-2 col-lg-2 col-sm-2 text-right post-button">
                         <input class="btn btn-primary" type="button" value="Post">
                         <input class="btn btn-info" type="button" value="Refresh">
                     </div>
@@ -124,53 +117,6 @@
                             echo   '</tr>';
                         }
                     ?>
-
-                    <!--
-                    <tr>
-                        <td>
-                            <span>[<a href="#">Game Strategy</a>]</span>
-                            <a href="#" target="_blank">I have passed all levels</a>
-                        </td>
-                        <td>
-                            <a href="#" rel="nofollow" target="_blank">Tom</a><br />
-                            <span class="">09-23 09:05</span></td>
-                        <td>0</td>
-                        <td class="tc">
-                            <a href="#" rel="nofollow" target="_blank" title="zhucezhanghu1">Lily</a><br />
-                            <span class="">09-24 10:15</span>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <span>[<a href="#">Game Activities</a>]</span>
-                            <a href="#" target="_blank">Who want to play the second level with me?</a>
-                        </td>
-                        <td>
-                            <a href="#" rel="nofollow" target="_blank">Tom</a><br />
-                            <span class="">09-23 09:05</span></td>
-                        <td>0</td>
-                        <td class="tc">
-                            <a href="#" rel="nofollow" target="_blank" title="zhucezhanghu1">Lily</a><br />
-                            <span class="">09-24 10:15</span>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <span>[<a href="#">Game Activities</a>]</span>
-                            <a href="#" target="_blank">Go to the 3rd level?</a>
-                        </td>
-                        <td>
-                            <a href="#" rel="nofollow" target="_blank">Tom</a><br />
-                            <span class="">09-23 09:05</span></td>
-                        <td>0</td>
-                        <td class="tc">
-                            <a href="#" rel="nofollow" target="_blank" title="zhucezhanghu1">Lily</a><br />
-                            <span class="">09-24 10:15</span>
-                        </td>
-                    </tr>
-                    -->
                     </tbody>
                     <thead>
                     <tr>
@@ -186,14 +132,7 @@
                 <div class="row">
                     <div class="col-md-8">
                         <ul class="pagination">
-                            <li><a href="#">Prev</a></li>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">Next</a></li>
-                            <span class="pages">Total:105,5 pages</span>
+                            <?php echo $_REQUEST['pagination']->outputPage();?>
                         </ul>
                     </div>
                     <div class="col-md-4 text-right post-button">
