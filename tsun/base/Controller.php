@@ -9,6 +9,7 @@
 	************************************************************************
 	*	update time			editor				updated information
      *  28-11-2015          Xiaoming Yang       delete useless comment
+     *  29-11-2015          Xiaoming Yang       add a filter to do user validation
 	*/
 	
 	class Controller{
