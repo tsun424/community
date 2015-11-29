@@ -25,4 +25,7 @@ class TopicController extends Controller {
         $this->view = View::build('topic/topicView');
     }
 
+    public function post(){
+        $this->view = View::build('topic/addTopic');
+    }
 }

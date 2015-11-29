@@ -27,8 +27,8 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a href="#">HOME</a></li>
+            <ul class="nav navbar-nav nav-color">
+                <li><a href="listTopics">HOME</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact US</a></li>
                 <li><a href="#">Help</a></li>
@@ -51,13 +51,13 @@
 
 <div class="wrapper">
     <ol class="breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Topics</a></li>
+        <li><a href="listTopics">Home</a></li>
+        <li id="secondM"><a href="listTopics">Topics</a></li>
     </ol>
 
     <ul class="nav nav-tabs">
-        <li class="active"><a href="#tab1" data-toggle="tab">Topics</a></li>
-        <li><a href="#tab2" data-toggle="tab">Learning Corner</a></li>
+        <li class="active"><a href="#tab1" onClick="topics();doRefresh()" data-toggle="tab">Topics</a></li>
+        <li><a href="#tab2" data-toggle="tab" onClick="learning()">Learning Corner</a></li>
     </ul>
 
     <div class="tab-content">
@@ -70,8 +70,8 @@
                         </ul>
                     </div>
                     <div class="col-md-2 col-lg-2 col-sm-2 text-right post-button">
-                        <input class="btn btn-primary" type="button" value="Post">
-                        <input class="btn btn-info" type="button" value="Refresh">
+                        <input class="btn btn-primary" type="button" onClick="addPost()" value="Post">
+                        <input class="btn btn-info" type="button" onClick="doRefresh()" value="Refresh">
                     </div>
                 </div>
             </div>
@@ -137,7 +137,7 @@
                     </div>
                     <div class="col-md-4 text-right post-button">
                         <input class="btn btn-primary" type="button" value="Post">
-                        <input class="btn btn-info" type="button" value="Refresh">
+                        <input class="btn btn-info" type="button" onClick="doRefresh()" value="Refresh">
                     </div>
                 </div>
             </div>
@@ -176,6 +176,7 @@
 </div>
 <script src="<?php echo ROOT_PATH;?>/public/js/jquery-1.11.3.min.js"></script>
 <script src="<?php echo ROOT_PATH;?>/public/js/bootstrap.min.js"></script>
+<script src="<?php echo ROOT_PATH;?>/public/js/topic/topic.js"></script>
 </body>
 
 </html>

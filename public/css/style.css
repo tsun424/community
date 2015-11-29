@@ -24,10 +24,16 @@ body { padding-top: 70px; }
 }
 .required{
 	color:#ff0000;
-	vertical-align:center;
+	vertical-align:middle;
 	margin-left:0.5em;
 }
 .wrapper-sm{
 	width:60%;
 	margin:auto;
 }
+.navbar-inverse .navbar-nav>li>a{
+    color:#fff;
+}
+#navbar-collapse-1>ul>li>a:hover{
+     color:#FFFF00;
+ }
