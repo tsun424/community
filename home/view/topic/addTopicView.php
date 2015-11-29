@@ -57,7 +57,7 @@
 <div id="summernote"></div>
 </div>
 <div class="text-center post-button">
-						<input class="btn btn-primary" type="button" onClick="test()" value="Post">
+						<input class="btn btn-primary" type="button" onClick="doSubmit()" value="Post">
 						<input class="btn btn-primary" type="button" value="Cancel">
 </div>
 <script src="<?php echo ROOT_PATH; ?>/public/js/jquery-1.11.3.min.js"></script>
