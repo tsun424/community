@@ -10,7 +10,7 @@
 	*	update time			editor				updated information
 	*	2015-09-29			Xiaoming Yang		change the path from relative to absolute
 	*   2015-09-30          Xiaoming Yang       include Load class to realise autoload class function
-	*
+	*   30-11-2015          Xiaoming Yang       include public functions
 	*/
 	
 	
@@ -21,6 +21,8 @@
     define("ROOT_PATH",$root_path);      //the root path of the project, it is for js and css import
 
     require(TSUN_PATH."/base/Load.php");
+    include TSUN_PATH."/base/PublicFunctions.php";  //include public functions
+
     Load::registerAuto();
 
 	URLTool::parseURL();

@@ -82,7 +82,7 @@
                     <td><a class="btn btn-default btn-block" role="button" href="#">Game Strategy</a></td>
                     <td><a class="btn btn-default btn-block" role="button" href="#">Game Experience</a></td>
                     <td><a class="btn btn-default btn-block" role="button" href="#">Resource Sharing</a></td>
-                    <td><a class="btn btn-default btn-block" role="button" href="#">Game Activities</a></td>
+                    <td><a class="btn btn-default btn-block" role="button" href="#">Game Activity</a></td>
                 </tr>
             </table>
 
@@ -103,7 +103,7 @@
                         foreach($topicAttr as $topic){
                             echo '<tr>';
                             echo  '<td>';
-                                    echo '<span>[Resource Sharing]</span>'.'&nbsp;';
+                                    echo '<span>['.$topic['section'].']</span>'.'&nbsp;';
                                     echo '<a href="#" target="_blank">'.$topic['title'].'</a>';
                             echo  '</td>';
                             echo  '<td>';

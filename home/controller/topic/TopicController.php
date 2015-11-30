@@ -6,6 +6,7 @@
  *	@Date	2015-11-28 22:55
  ************************************************************************
  *	update time			editor				updated information
+ *  30-11-2015          Xiaoming Yang       add addTopic function
  */
 
 class TopicController extends Controller {
@@ -26,6 +27,23 @@ class TopicController extends Controller {
     }
 
     public function post(){
-        $this->view = View::build('topic/addTopic');
+        $this->view = View::build('topic/addTopicView');
+    }
+
+    /**
+     *	add a new topic
+     *
+     */
+    public function addTopic(){
+        $content = _get("content");
+        $topicTitle = _get("topic_title");
+        $section = _get("section");
+        $useAttr = $_SESSION["user"];
+        $result = $this->topicModel->addTopic($topicTitle, $content, $section, $useAttr);
+        if($result == 1){
+            parent::redirect("listTopics");
+        }else{
+            $this->view = View::build('failure.php');
+        }
     }
 }

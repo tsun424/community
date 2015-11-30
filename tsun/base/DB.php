@@ -28,10 +28,23 @@ class DB {
         return new DB();
     }
 
-    protected function select($sql,$paraArr){
+    protected function select($sql,$paramArr){
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute($paraArr);
+        $stmt->execute($paramArr);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    /**
+     *  call a procedure
+     * @param   $sql
+     * @param   $paramArr
+     * @return Array
+     */
+
+    protected function callProcedure($sql,$paramArr){
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute($paramArr);
+        return $this->conn->query("select @p_result")->fetch(PDO::FETCH_ASSOC);
     }
 
     public static function __callStatic($method,$args){

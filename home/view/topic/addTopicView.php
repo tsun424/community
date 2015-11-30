@@ -51,15 +51,40 @@
     </div><!-- /.container-fluid -->
 </nav>
 
-
 <div class="wrapper">
-<h3 class="h3">Post a New Topic:</h3>
-<div id="summernote"></div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+            <h1 class="page-header">Post a New Topic</h1>
+            <form class="form-horizontal" id="topic_form" action="<?php echo ROOT_FILE?>/topic/addTopic" method="post">
+                <input type="hidden" name="content" id="content">
+
+                <div class="form-group">
+                    <div class="col-lg-8 col-md-8 col-xs-8 col-sm-8">
+                        <input type="text" class="form-control" id="topic_title" name="topic_title" placeholder="Topic Title" required="required">
+                    </div>
+                </div>
+
+                <div id="summernote"></div>
+                <div class="form-group">
+                    <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+                        <select class="form-control" name="section" id="section">
+                            <option value="1">Game Strategy</option>
+                            <option value="2">Game Experience</option>
+                            <option value="3">Resource Sharing</option>
+                            <option value="4">Game Activity</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 text-center post-button">
+                    <input class="btn btn-primary" type="button" onClick="doSubmit()" value="Post">
+                    <input class="btn btn-primary" type="button" value="Cancel">
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
-<div class="text-center post-button">
-						<input class="btn btn-primary" type="button" onClick="doSubmit()" value="Post">
-						<input class="btn btn-primary" type="button" value="Cancel">
-</div>
+
+s
 <script src="<?php echo ROOT_PATH; ?>/public/js/jquery-1.11.3.min.js"></script>
 <script src="<?php echo ROOT_PATH; ?>/public/js/bootstrap.min.js"></script>
 <script src="<?php echo ROOT_PATH; ?>/public/js/summernote.min.js"></script>
