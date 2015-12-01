@@ -37,3 +37,16 @@ body { padding-top: 70px; }
 #navbar-collapse-1>ul>li>a:hover{
      color:#FFFF00;
  }
+table{
+    table-layout:fixed;
+    word-break:break-all;
+}
+.topictable>tbody>tr>td{
+    border:1px solid #99b3ff;
+}
+.userInfo{
+   background-color: #EFF4FB;
+}
+.topicInfo{
+    background-color: #F5F5F5;
+}

@@ -17,7 +17,7 @@ class TopicModel {
         $pagination->setValues(DB::select($sql,[])[0]['total']);
 
         $sql = "select a.topicNo,a.sectionName as section, a.topicTitle as title,a.userNickname as author,a.postTime as posttime,"
-                ." b.userNickname as lastreply,b.replyTime as lasttime,c.times as replytimes"
+                ." b.userNickname as lastreply,b.replyTime as lasttime, ifnull(c.times,0) as replytimes"
                 ." from t_s_topic a left join t_s_reply b on a.topicNo=b.topicNo"
                 ." left join (select topicNo, max(replyTime) as replyTime,count(id) times from t_s_reply group by topicNo) c "
                 ." on b.topicNo=c.topicNo and b.replyTime=c.replyTime"
@@ -45,4 +45,25 @@ class TopicModel {
         }
         return 0;
     }
+
+    public function queryTopic($topicNo){
+        $sql = "select a.topicNo, a.postTime, a.topicContent"
+                ." from t_s_topic a"
+                ." where topicNo = ?";
+        $topicArr = DB::select($sql,[$topicNo]);
+        $sql = "select replyNumber,topicNo,userId,userNickname,replyContent,replyTime"
+            ." from t_s_reply"
+            ." where topicNo = ?";
+        $replyArr = DB::select($sql,[$topicNo]);
+        return [$topicArr,$replyArr];
+
+    }
+
+    public function addReply($content, $topicNo, $useArr){
+        $sql = "CALL P_ADD_REPLY(?,?,?,?,@p_result)";
+        $paramArr = [$useArr['userId'],$useArr['userNickname'],$topicNo,$content];
+
+        return DB::callProcedure($sql,$paramArr)['@p_result'];
+    }
+
 }

@@ -19,7 +19,7 @@
 			if(file_exists($viewFile)){
 				return new View($viewFile);
 			}else{
-				echo "The requested view doesn't exist.";
+				echo "The requested view $viewFile doesn't exist.";
 				//throw an exception here --to be finished
 			}
 			

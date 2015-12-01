@@ -84,7 +84,6 @@
     </div>
 </div>
 
-s
 <script src="<?php echo ROOT_PATH; ?>/public/js/jquery-1.11.3.min.js"></script>
 <script src="<?php echo ROOT_PATH; ?>/public/js/bootstrap.min.js"></script>
 <script src="<?php echo ROOT_PATH; ?>/public/js/summernote.min.js"></script>

@@ -7,6 +7,7 @@
  ************************************************************************
  *	update time			editor				updated information
  *  2015-10-07          Xiaoming Yang       comment autoload model class part
+ *  01-12-2015          Xiaoming Yang       optimise exception output
  */
 
     class Load{
@@ -22,7 +23,7 @@
                 if(isset($controllerArr[$action])){
                     include APP_PATH."/controller/".$controllerArr[$action];
                 }else{
-                    throw new Exception("The requested controller doesn't exist.");
+                    throw new Exception("The requested controller ".$action." doesn't exist.");
                 }
             }/* 2015-10-07 comment this part, the model will be instanced by Model factory
                 else if(strpos($className,'Model') !== false && strpos($className,'Model') > 0){
