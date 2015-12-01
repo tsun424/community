@@ -91,31 +91,31 @@
                 <table class="table table-striped table-hover">
                     <thead>
                     <tr>
-                        <th>Topic Title</th>
-                        <th>Author</th>
-                        <th>Reply Times</th>
-                        <th>Last Reply</th>
+                        <th width="65">Topic Title</th>
+                        <th width="15">Author</th>
+                        <th width="5">Reply Times</th>
+                        <th width="15">Last Reply</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php
-                        $topicAttr = $_REQUEST['topicAttr'];
-                        foreach($topicAttr as $topic){
-                            echo '<tr>';
-                            echo  '<td>';
-                                    echo '<span>['.$topic['section'].']</span>'.'&nbsp;';
-                                    echo '<a href="#" target="_blank">'.$topic['title'].'</a>';
-                            echo  '</td>';
-                            echo  '<td>';
-                            echo          $topic['author'].'<br />';
-                            echo         '<span class="">'.$topic['posttime'].'</span></td>';
-                            echo      '<td>'.$topic['replytimes'].'</td>';
-                            echo      '<td class="tc">';
-                            echo          $topic['lastreply'].'<br />';
-                            echo          '<span class="">'.$topic['lasttime'].'</span>';
-                            echo    '</td>';
-                            echo   '</tr>';
-                        }
+                    $topicAttr = $_REQUEST['topicAttr'];
+                    foreach($topicAttr as $topic){
+                        echo '<tr>';
+                        echo  '<td>';
+                        echo '<span>['.$topic['section'].']</span>'.'&nbsp;';
+                        echo "<a href='queryTopic?topicNo=".$topic['topicNo']."'>".$topic['title']."</a>";
+                        echo  '</td>';
+                        echo  '<td>';
+                        echo          $topic['author'].'<br />';
+                        echo         '<span class="">'.$topic['posttime'].'</span></td>';
+                        echo      '<td>'.$topic['replytimes'].'</td>';
+                        echo      '<td class="tc">';
+                        echo          $topic['lastreply'].'<br />';
+                        echo          '<span class="">'.$topic['lasttime'].'</span>';
+                        echo    '</td>';
+                        echo   '</tr>';
+                    }
                     ?>
                     </tbody>
                     <thead>
