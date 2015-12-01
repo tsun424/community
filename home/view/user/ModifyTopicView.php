@@ -1,22 +1,22 @@
 <?php
-    $userArr = $_SESSION['user'];
-    $mainTopicAttr = $_REQUEST['mainTopic'][0];
-    $replyArr = $_REQUEST['replyArr'];
+    $topicArr = $_REQUEST['topicArr'];
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/public/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/public/css/style.css">
-    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/public/css/summernote.css">
-    <link href="<?php echo ROOT_PATH; ?>/public/css/font-awesome.min.css" rel="stylesheet">
-
-    <title>Social Network for Theseus and the Minotaur Gaming</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/public/css/style.css">
+	<link rel="stylesheet" href="<?php echo ROOT_PATH; ?>/public/css/summernote.css">
+	<link href="<?php echo ROOT_PATH; ?>/public/css/font-awesome.min.css" rel="stylesheet">
+	
+	<title>Social Network for Theseus and the Minotaur Gaming</title>
 </head>
+
 <body>
+
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -54,36 +54,30 @@
     </div><!-- /.container-fluid -->
 </nav>
 
-
 <div class="wrapper">
-    <table class="table topictable">
-        <tr class="userInfo">
-            <td rowspan="3" width="20%"><?php echo $userArr['userNickname'] ?></td>
-        </tr>
-        <tr class="topicInfo"><td>Posted at:&nbsp;<?php echo $mainTopicAttr['postTime']?></td></tr>
-        <tr class="topicInfo"><td><?php echo $mainTopicAttr['topicContent']?></td></tr>
-    </table>
-
-    <?php
-        $i = 1;
-        foreach($replyArr as $reply){
-            echo '<table class="table topictable">';
-            echo '<tr class="userInfo">';
-            echo "<td rowspan='3' width='20%'>".$reply["userNickname"]."</td>";
-            echo "<tr class='topicInfo'>";
-            echo "<td>&nbsp;<strong>#".$i++."</strong>&nbsp;&nbsp;Replied at:&nbsp;".$reply['replyTime']."</td></tr>";
-            echo "<tr class='topicInfo'><td>".$reply['replyContent']."</td></tr>";
-            echo "</table>";
-        }
-    ?>
-
     <div class="row">
         <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
-            <h4 class="page-header">Reply This Topic</h4>
-            <form class="form-horizontal" id="topic_form" action="<?php echo ROOT_FILE?>/topic/addReply" method="post">
-                <input type="hidden" name="content" id="content">
-                <input type="hidden" name="topicNo" id="topicNo" value="<?php echo $mainTopicAttr['topicNo']?>">
+            <h1 class="page-header">Modify the Topic</h1>
+            <form class="form-horizontal" id="topic_form" action="<?php echo ROOT_FILE?>/user/modifyTopic" method="post">
+                <input type="hidden" name="content" id="content" value='<?php echo $topicArr["topicContent"] ?>'>
+                <input type="hidden" name="topicNo" id="topicNo" value='<?php echo $topicArr["topicNo"] ?>'>
+                <div class="form-group">
+                    <div class="col-lg-8 col-md-8 col-xs-8 col-sm-8">
+                        <input type="text" class="form-control" id="topicTitle" name="topicTitle" value='<?php echo $topicArr["topicTitle"] ?>' required="required">
+                    </div>
+                </div>
+
                 <div id="summernote"></div>
+                <div class="form-group">
+                    <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+                        <select class="form-control" name="section" id="section">
+                            <option <?php if($topicArr['sectionName'] == 'Game Strategy') echo "selected"; ?> value="1">Game Strategy</option>
+                            <option <?php if($topicArr['sectionName'] == 'Game Experience') echo "selected"; ?> value="2">Game Experience</option>
+                            <option <?php if($topicArr['sectionName'] == 'Resource Sharing') echo "selected"; ?> value="3">Resource Sharing</option>
+                            <option <?php if($topicArr['sectionName'] == 'Game Activity') echo "selected"; ?> value="4">Game Activity</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 text-center post-button">
                     <input class="btn btn-primary" type="button" onClick="doSubmit()" value="Post">
                     <input class="btn btn-primary" type="button" value="Cancel">
@@ -92,9 +86,10 @@
         </div>
     </div>
 </div>
+
 <script src="<?php echo ROOT_PATH; ?>/public/js/jquery-1.11.3.min.js"></script>
 <script src="<?php echo ROOT_PATH; ?>/public/js/bootstrap.min.js"></script>
 <script src="<?php echo ROOT_PATH; ?>/public/js/summernote.min.js"></script>
-<script src="<?php echo ROOT_PATH; ?>/public/js/topic/oneTopic.js"></script>
+<script src="<?php echo ROOT_PATH; ?>/public/js/user/modifyTopic.js"></script>
 </body>
 </html>

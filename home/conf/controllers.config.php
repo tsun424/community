@@ -14,5 +14,6 @@
 return [
 
     'login' => 'admin/LoginController.php',
-    'topic' => 'topic/TopicController.php'
+    'topic' => 'topic/TopicController.php',
+    'user' => 'user/UserController.php'
 ];

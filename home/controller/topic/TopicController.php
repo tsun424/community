@@ -7,7 +7,7 @@
  ************************************************************************
  *	update time			editor				updated information
  *  30-11-2015          Xiaoming Yang       add addTopic function
- *  01-12-2015          Xiaoming Yang       add queryTopic function, addReply functioin
+ *  01-12-2015          Xiaoming Yang       add queryTopic function, addReply function
  */
 
 class TopicController extends Controller {
@@ -39,8 +39,8 @@ class TopicController extends Controller {
         $content = _get("content");
         $topicTitle = _get("topic_title");
         $section = _get("section");
-        $useAttr = $_SESSION["user"];
-        $result = $this->topicModel->addTopic($topicTitle, $content, $section, $useAttr);
+        $useArr = $_SESSION["user"];
+        $result = $this->topicModel->addTopic($topicTitle, $content, $section, $useArr);
         if($result == 1){
             parent::redirect("listTopics");
         }else{
@@ -66,7 +66,7 @@ class TopicController extends Controller {
     public function addReply(){
         $content = _get("content");
         $topicNo = _get("topicNo");
-        $useArr = $_SESSION["user"][0];
+        $useArr = $_SESSION["user"];
         $result = $this->topicModel->addReply($content, $topicNo, $useArr);
 
         if($result == 1){

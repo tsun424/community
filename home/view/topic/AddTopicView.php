@@ -30,10 +30,10 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
             <ul class="nav navbar-nav nav-color">
-                <li><a href="listTopics">HOME</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact US</a></li>
-                <li><a href="#">Help</a></li>
+                <li><a href="<?php echo ROOT_FILE?>/topic/listTopics">HOME</a></li>
+                <li><a href="<?php echo ROOT_FILE?>/login/about">About</a></li>
+                <li><a href="<?php echo ROOT_FILE?>/login/contact">Contact US</a></li>
+                <li><a href="<?php echo ROOT_FILE?>/login/help">Help</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -41,7 +41,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">My Profile</a></li>
-                        <li><a href="#">Password Modification</a></li>
+                        <li><a href="<?php echo ROOT_FILE?>/user/myTopics">My Topics</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#">Logout</a></li>
                     </ul>

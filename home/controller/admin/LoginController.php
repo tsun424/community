@@ -24,13 +24,24 @@ class LoginController extends Controller{
             $userAttr = $this->loginModel->login($userName,$userPwd);
             if(count($userAttr) > 0){
                 session_start();
-                $_SESSION['user'] = $userAttr;
+                $_SESSION['user'] = $userAttr[0];
                 parent::redirect("topic/listTopics");
             }else{
                 $this->view = View::build('failure');
             }
 
 		}
+
+        function about(){
+            $this->view = View::build('admin/AboutView');
+        }
+        function help(){
+            $this->view = View::build('admin/HelpView');
+        }
+        function contact(){
+            $this->view = View::build('admin/ContactView');
+        }
+
 		function index(){
             $this->view = View::build('admin/LoginView');
 		}

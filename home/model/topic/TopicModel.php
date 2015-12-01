@@ -17,11 +17,11 @@ class TopicModel {
         $pagination->setValues(DB::select($sql,[])[0]['total']);
 
         $sql = "select a.topicNo,a.sectionName as section, a.topicTitle as title,a.userNickname as author,a.postTime as posttime,"
-                ." b.userNickname as lastreply,b.replyTime as lasttime, ifnull(c.times,0) as replytimes"
-                ." from t_s_topic a left join t_s_reply b on a.topicNo=b.topicNo"
-                ." left join (select topicNo, max(replyTime) as replyTime,count(id) times from t_s_reply group by topicNo) c "
-                ." on b.topicNo=c.topicNo and b.replyTime=c.replyTime"
-                ." order by b.replyTime desc, a.postTime desc"
+                ." b.userNickname as lastreply,b.replyTime as lasttime, ifnull(b.times,0) as replytimes"
+                ." from t_s_topic a left join "
+                ." (select topicNo,userNickname, max(replyTime) as replyTime,count(id) times from t_s_reply group by topicNo) b "
+                ." on b.topicNo=a.topicNo"
+                ." order by a.postTime desc, b.replyTime desc"
                 ." limit ".(($pageNum-1)*$pagination->rowNum).",".$pagination->rowNum;
 
         return DB::select($sql,[]);
@@ -32,10 +32,10 @@ class TopicModel {
      *  @param   string $content    the content information of the topic
      *  @param   string $userAttr   the associative array of user
      */
-    public function addTopic($topicTitle, $content, $section, $userAttr){
+    public function addTopic($topicTitle, $content, $section, $userArr){
         $sql = "CALL P_ADD_TOPIC(?,?,?,?,@p_result)";
         $paramAttr = [];
-        $paramAttr[] = $userAttr[0]["userId"];
+        $paramAttr[] = $userArr["userId"];
         $paramAttr[] = $topicTitle;
         $paramAttr[] = $content;
         $paramAttr[] = $section;

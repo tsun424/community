@@ -13,6 +13,7 @@
 
 return [
     'login' => 'admin/LoginModel.php',
-    'topic' => 'topic/TopicModel.php'
+    'topic' => 'topic/TopicModel.php',
+    'user' => 'user/UserModel.php'
 ];
 

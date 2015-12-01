@@ -76,25 +76,9 @@
             echo "</table>";
         }
     ?>
-
-    <div class="row">
-        <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
-            <h4 class="page-header">Reply This Topic</h4>
-            <form class="form-horizontal" id="topic_form" action="<?php echo ROOT_FILE?>/topic/addReply" method="post">
-                <input type="hidden" name="content" id="content">
-                <input type="hidden" name="topicNo" id="topicNo" value="<?php echo $mainTopicAttr['topicNo']?>">
-                <div id="summernote"></div>
-                <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 text-center post-button">
-                    <input class="btn btn-primary" type="button" onClick="doSubmit()" value="Post">
-                    <input class="btn btn-primary" type="button" value="Cancel">
-                </div>
-            </form>
-        </div>
-    </div>
 </div>
 <script src="<?php echo ROOT_PATH; ?>/public/js/jquery-1.11.3.min.js"></script>
 <script src="<?php echo ROOT_PATH; ?>/public/js/bootstrap.min.js"></script>
 <script src="<?php echo ROOT_PATH; ?>/public/js/summernote.min.js"></script>
-<script src="<?php echo ROOT_PATH; ?>/public/js/topic/oneTopic.js"></script>
 </body>
 </html>
