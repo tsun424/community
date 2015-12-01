@@ -58,4 +58,9 @@ class UserModel {
         return [$topicArr,$replyArr];
 
     }
+
+    public function delete($topicNo){
+        $sql = "delete from t_s_topic where topicNo = ?";
+        return DB::change($sql,[$topicNo]);
+    }
 }

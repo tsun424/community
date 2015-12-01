@@ -96,7 +96,7 @@
                             echo          '<span class="">'.$topic['lasttime'].'</span>';
                             echo    '</td>';
                             echo    "<td><a href='modify?topicNo=".$topic['topicNo']."'"." class='btn btn-default btn-sm'>modify</a>&nbsp;&nbsp;&nbsp;";
-                            echo        "<button type='button' onClick='' class='btn btn-default btn-sm'>delete</button></td>";
+                            echo        "<button type='button' onclick='callModal(this)' topicNo='".$topic['topicNo']."' class='btn btn-default btn-sm'>delete</button></td>";
                             echo   '</tr>';
                         }
                     ?>
@@ -125,9 +125,29 @@
 
     </div>
 </div>
+
+<div id = "myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Confirm</h4>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure to delete this topic?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="deleteBtn" onclick="doDelete(this)">Delete</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
 <script src="<?php echo ROOT_PATH;?>/public/js/jquery-1.11.3.min.js"></script>
 <script src="<?php echo ROOT_PATH;?>/public/js/bootstrap.min.js"></script>
-<script src="<?php echo ROOT_PATH;?>/public/js/topic/topic.js"></script>
+<script src="<?php echo ROOT_PATH;?>/public/js/user/myTopics.js"></script>
 </body>
 
 </html>

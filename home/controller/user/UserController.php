@@ -57,5 +57,15 @@
                 $this->view = View::build('failure');
             }
         }
+
+        public function delete(){
+            $topicNo = _get("topicNo");
+            $result = $this->userModel->delete($topicNo);
+            if($result){
+                parent::redirect("myTopics");
+            }else{
+                $this->view = View::build('failure');
+            }
+        }
 	}
 ?>
