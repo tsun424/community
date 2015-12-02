@@ -44,7 +44,7 @@
                         <li><a href="#">My Profile</a></li>
                         <li><a href="<?php echo ROOT_FILE?>/user/myTopics">My Topics</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="#" onclick='callModal()'>Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -88,9 +88,27 @@
                 </tbody>
             </table>
         </div>
+        <div id = "exitModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Confirm</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure to exit?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a type="button" class="btn btn-primary" id="deleteBtn" onclick="doExit()">Quit</a>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
     </main>
 <script src="<?php echo ROOT_PATH; ?>/public/js/jquery-1.11.3.min.js"></script>
 <script src="<?php echo ROOT_PATH; ?>/public/js/bootstrap.min.js"></script>
 <script src="<?php echo ROOT_PATH; ?>/public/js/summernote.min.js"></script>
+<script src="<?php echo ROOT_PATH;?>/public/js/base.js"></script>
 </body>
 </html>
