@@ -16,7 +16,6 @@ class DB {
     public function __construct(){
 
         $dbParams = require(APP_PATH."/conf/db.config.php");
-        //$dbParams = require("E:/PHP/wamp/www/framework/home/conf/db.config.php");
         $dsn = 'mysql:host='.$dbParams['mysql']['host'].';dbname='.$dbParams['mysql']['database'];
         $this->conn = new PDO($dsn, $dbParams['mysql']['username'], $dbParams['mysql']['password']);
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

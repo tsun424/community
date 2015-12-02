@@ -51,8 +51,8 @@
 
 <div class="wrapper">
     <ol class="breadcrumb">
-        <li><a href="listTopics">Home</a></li>
-        <li id="secondM"><a href="listTopics">My Topics</a></li>
+        <li><a href="<?php echo ROOT_FILE?>/topic/listTopics">Home</a></li>
+        <li id="secondM"><a href="<?php echo ROOT_FILE?>/user/myTopics">My Topics</a></li>
     </ol>
 
     <div class="tab-content">
@@ -96,7 +96,7 @@
                             echo          '<span class="">'.$topic['lasttime'].'</span>';
                             echo    '</td>';
                             echo    "<td><a href='modify?topicNo=".$topic['topicNo']."'"." class='btn btn-default btn-sm'>modify</a>&nbsp;&nbsp;&nbsp;";
-                            echo        "<button type='button' onclick='callModal(this)' topicNo='".$topic['topicNo']."' class='btn btn-default btn-sm'>delete</button></td>";
+                            echo        "<button type='button' onclick='callDeleteModal(this)' topicNo='".$topic['topicNo']."' class='btn btn-default btn-sm'>delete</button></td>";
                             echo   '</tr>';
                         }
                     ?>

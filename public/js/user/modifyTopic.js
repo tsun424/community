@@ -14,7 +14,7 @@ $(document).ready(function() {
         maxHeight: null,             // set maximum height of editor
         focus: false                // set focus to editable area after initializing summernote
     });
-    $('#summernote').code($('#content').val());
+    //$('#summernote').code($('#content').val());
 });
 
 function doSubmit() {

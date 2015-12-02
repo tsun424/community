@@ -9,7 +9,7 @@
  */
 
 
-function callModal(obj) {
+function callDeleteModal(obj) {
     $('#deleteBtn').attr("topicNo",$(obj).attr("topicNo"));
     $('#myModal').modal();
 }

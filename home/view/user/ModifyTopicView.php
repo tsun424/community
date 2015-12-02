@@ -55,19 +55,24 @@
 </nav>
 
 <div class="wrapper">
+    <ol class="breadcrumb">
+        <li><a href="<?php echo ROOT_FILE?>/topic/listTopics">Home</a></li>
+        <li id="secondM"><a href="<?php echo ROOT_FILE?>/user/myTopics">My Topics</a></li>
+    </ol>
     <div class="row">
         <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
             <h1 class="page-header">Modify the Topic</h1>
             <form class="form-horizontal" id="topic_form" action="<?php echo ROOT_FILE?>/user/modifyTopic" method="post">
-                <input type="hidden" name="content" id="content" value='<?php echo $topicArr["topicContent"] ?>'>
+                <input type="hidden" name="content" id="content">
                 <input type="hidden" name="topicNo" id="topicNo" value='<?php echo $topicArr["topicNo"] ?>'>
+
                 <div class="form-group">
                     <div class="col-lg-8 col-md-8 col-xs-8 col-sm-8">
                         <input type="text" class="form-control" id="topicTitle" name="topicTitle" value='<?php echo $topicArr["topicTitle"] ?>' required="required">
                     </div>
                 </div>
 
-                <div id="summernote"></div>
+                <div id="summernote"><?php echo $topicArr["topicContent"]?></div>
                 <div class="form-group">
                     <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
                         <select class="form-control" name="section" id="section">

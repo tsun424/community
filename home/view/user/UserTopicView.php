@@ -56,6 +56,10 @@
 
 
 <div class="wrapper">
+    <ol class="breadcrumb">
+        <li><a href="<?php echo ROOT_FILE?>/topic/listTopics">Home</a></li>
+        <li id="secondM"><a href="<?php echo ROOT_FILE?>/user/myTopics">My Topics</a></li>
+    </ol>
     <h3 class="page-header"><?php echo $mainTopicAttr['topicTitle'] ?></h3>
     <table class="table topictable">
         <tr class="userInfo">
