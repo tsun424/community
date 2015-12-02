@@ -19,15 +19,19 @@ class LoginController extends Controller{
         }
 
 		function login(){
-            $userName = $_REQUEST['username'];
-            $userPwd = $_REQUEST['userpwd'];
+            $userName = _get('username');
+            $userPwd = _get('userpwd');
             $userAttr = $this->loginModel->login($userName,$userPwd);
+
             if(count($userAttr) > 0){
                 session_start();
                 $_SESSION['user'] = $userAttr[0];
-                parent::redirect("topic/listTopics");
+                echo "1";
+                return;
+                //parent::redirect("topic/listTopics");
             }else{
-                $this->view = View::build('failure');
+                echo "0";
+                return;
             }
 
 		}
