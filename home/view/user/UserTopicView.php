@@ -43,7 +43,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">My Profile</a></li>
+                        <li><a href="<?php echo ROOT_FILE?>/user/myProfile">My Profile</a></li>
                         <li><a href="<?php echo ROOT_FILE?>/user/myTopics">My Topics</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#">Logout</a></li>

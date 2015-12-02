@@ -67,5 +67,9 @@
                 $this->view = View::build('failure');
             }
         }
+
+        public function myProfile(){
+            $this->view = View::build("user/MyProfileView");
+        }
 	}
 ?>

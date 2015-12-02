@@ -1,7 +1,5 @@
 <?php
     $userArr = $_SESSION['user'];
-    $mainTopicAttr = $_REQUEST['mainTopic'][0];
-    $replyArr = $_REQUEST['replyArr'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,7 +41,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="<?php echo ROOT_FILE?>/user/myProfile">My Profile</a></li>
+                        <li><a href="#">My Profile</a></li>
                         <li><a href="<?php echo ROOT_FILE?>/user/myTopics">My Topics</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#">Logout</a></li>
@@ -54,47 +52,45 @@
     </div><!-- /.container-fluid -->
 </nav>
 
-
-<div class="wrapper">
-    <table class="table topictable">
-        <tr class="userInfo">
-            <td rowspan="3" width="20%"><?php echo $userArr['userNickname'] ?></td>
-        </tr>
-        <tr class="topicInfo"><td>Posted at:&nbsp;<?php echo $mainTopicAttr['postTime']?></td></tr>
-        <tr class="topicInfo"><td><?php echo $mainTopicAttr['topicContent']?></td></tr>
-    </table>
-
-    <?php
-        $i = 1;
-        foreach($replyArr as $reply){
-            echo '<table class="table topictable">';
-            echo '<tr class="userInfo">';
-            echo "<td rowspan='3' width='20%'>".$reply["userNickname"]."</td>";
-            echo "<tr class='topicInfo'>";
-            echo "<td>&nbsp;<strong>#".$i++."</strong>&nbsp;&nbsp;Replied at:&nbsp;".$reply['replyTime']."</td></tr>";
-            echo "<tr class='topicInfo'><td>".$reply['replyContent']."</td></tr>";
-            echo "</table>";
-        }
-    ?>
-
-    <div class="row">
-        <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
-            <h4 class="page-header">Reply This Topic</h4>
-            <form class="form-horizontal" id="topic_form" action="<?php echo ROOT_FILE?>/topic/addReply" method="post">
-                <input type="hidden" name="content" id="content">
-                <input type="hidden" name="topicNo" id="topicNo" value="<?php echo $mainTopicAttr['topicNo']?>">
-                <div id="summernote"></div>
-                <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 text-center post-button">
-                    <input class="btn btn-primary" type="button" onClick="doSubmit()" value="Post">
-                    <input class="btn btn-primary" type="button" value="Cancel">
-                </div>
-            </form>
+    <main class="wrapper">
+        <h1 class="page-header">Personal Information</h1>
+        <div class="content">
+            <table class="table table-striped table-hover table-bordered">
+                <tbody>
+                    <tr>
+                        <td width="20%">Name:</td>
+                        <td width="80%"><?php echo $userArr['userName'] ?></td>
+                    </tr>
+                    <tr>
+                        <td>Nickname:</td>
+                        <td><?php echo $userArr['userNickname'] ?></td>
+                    </tr>
+                    <tr>
+                        <td>Sex:</td>
+                        <td><?php echo $userArr['userSex'] ?></td>
+                    </tr>
+                    <tr>
+                        <td>User Level:</td>
+                        <td><?php echo $userArr['userLevel'] ?></td>
+                    </tr>
+                    <tr>
+                        <td>Birthday:</td>
+                        <td><?php echo $userArr['userBirthday'] ?></td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td><?php echo $userArr['userEmail'] ?></td>
+                    </tr>
+                    <tr>
+                        <td>Register Time:</td>
+                        <td><?php echo $userArr['registerTime'] ?></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    </div>
-</div>
+    </main>
 <script src="<?php echo ROOT_PATH; ?>/public/js/jquery-1.11.3.min.js"></script>
 <script src="<?php echo ROOT_PATH; ?>/public/js/bootstrap.min.js"></script>
 <script src="<?php echo ROOT_PATH; ?>/public/js/summernote.min.js"></script>
-<script src="<?php echo ROOT_PATH; ?>/public/js/topic/oneTopic.js"></script>
 </body>
 </html>
