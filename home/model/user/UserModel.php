@@ -47,7 +47,7 @@ class UserModel {
     }
 
     public function queryTopic($topicNo){
-        $sql = "select a.topicNo, a.postTime, a.topicContent"
+        $sql = "select a.topicNo, a.postTime, a.topicTitle, a.topicContent"
             ." from t_s_topic a"
             ." where topicNo = ?";
         $topicArr = DB::select($sql,[$topicNo]);

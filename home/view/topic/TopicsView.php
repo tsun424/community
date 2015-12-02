@@ -147,27 +147,22 @@
                 <tr>
                     <th>Name</th>
                     <th>Size</th>
-                    <th>Download Times</th>
                 </tr>
 
                 <tbody>
                 <tr>
                     <td>
-                        <span>[<a href="#">Video</a>]</span>
-                        <a href="#" target="_blank">How can you become a greate player</a>
+                        <span>[PDF]</span>
+                        <a href="/community/download/d1.pdf" target="_blank">How can you become a great player</a>
                     </td>
-                    <td>10 MB</td>
-                    <td>102
-                    </td>
+                    <td>112 KB</td>
                 </tr>
                 <tr>
                     <td>
-                        <span>[<a href="#">PDF</a>]</span>
-                        <a href="#" target="_blank">Learning Theseus and the Minotaur Step by Step</a>
+                        <span>[PDF]</span>
+                        <a href="/community/download/d2.pdf" target="_blank">Learning Theseus and the Minotaur Step by Step</a>
                     </td>
-                    <td>6 MB</td>
-                    <td>202
-                    </td>
+                    <td>115 KB</td>
                 </tr>
                 </tbody>
             </table>

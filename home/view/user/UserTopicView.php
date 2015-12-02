@@ -56,6 +56,7 @@
 
 
 <div class="wrapper">
+    <h3 class="page-header"><?php echo $mainTopicAttr['topicTitle'] ?></h3>
     <table class="table topictable">
         <tr class="userInfo">
             <td rowspan="3" width="20%"><?php echo $userArr['userNickname'] ?></td>
